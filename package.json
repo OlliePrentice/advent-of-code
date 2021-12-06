@@ -1,0 +1,9 @@
+{
+  "name": "adventofcode",
+  "version": "1.0.0",
+  "description": "Challenges and solutions from Advent of Code",
+  "main": "index.js",
+  "repository": "git@github.com:OlliePrentice/advent-of-code.git",
+  "author": "Ollie Prentice",
+  "license": "MIT"
+}
