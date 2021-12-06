@@ -1,4 +1,4 @@
-const { input } = require("./input.js");
+const { input } = require("./input");
 
 (() => {
     let count = 0;
@@ -11,7 +11,7 @@ const { input } = require("./input.js");
         return input[index];
     });
 
-    console.log('Part 1:', count);
+    console.log("Part 1:", count);
 })();
 
 (() => {
@@ -28,5 +28,5 @@ const { input } = require("./input.js");
         return input[index];
     });
 
-    console.log('Part 2:', count);
+    console.log("Part 2:", count);
 })();
