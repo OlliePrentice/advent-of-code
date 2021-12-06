@@ -6,7 +6,15 @@ const input = fs
     .toString()
     .trim()
     .split("\n")
-    .map((num) => parseInt(num, 10));
+    .map((line) => {
+        let [movement, amount] = line.split(" ");
+        amount = parseInt(amount, 10);
+
+        return {
+            movement,
+            amount,
+        };
+    });
 
 module.exports = {
     input,
