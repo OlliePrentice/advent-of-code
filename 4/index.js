@@ -3,7 +3,10 @@ const { Picker, Scorecard } = require("./bingo");
 const { cyan } = require("colors/safe");
 
 (() => {
-    const picker = new Picker(numbers, scorecards.map((v, i) => new Scorecard(v, i)));
+    const picker = new Picker(
+        numbers,
+        scorecards.map((v, i) => new Scorecard(v, i))
+    );
     let winners;
 
     while (!winners) {
@@ -16,7 +19,7 @@ const { cyan } = require("colors/safe");
         throw new Error("More than one board won first!");
     }
 
-    console.log("\nPART ONE\n");
+    console.log("Part 1:\n");
     console.log(
         picker.called
             .map((num) => (winner.hasMatch(num) ? cyan(num) : num))
@@ -29,15 +32,17 @@ const { cyan } = require("colors/safe");
 })();
 
 (() => {
-    const picker = new Picker(numbers, scorecards.map((v, i) => new Scorecard(v, i)));
+    const picker = new Picker(
+        numbers,
+        scorecards.map((v, i) => new Scorecard(v, i))
+    );
     let winners;
     let boardsRemaining = scorecards.length;
 
-
-    while(boardsRemaining > 0) {
+    while (boardsRemaining > 0) {
         winners = picker.next();
 
-        if(winners) {
+        if (winners) {
             boardsRemaining -= winners.length;
         }
     }
@@ -45,11 +50,11 @@ const { cyan } = require("colors/safe");
     let [winner, ...rest] = winners;
 
     if (rest.length > 0) {
-        throw new Error('More than one board won last!');
+        throw new Error("More than one board won last!");
     }
 
     console.log("-----");
-    console.log("\nPART TWO\n");
+    console.log("\nPart 2:\n");
     console.log(
         picker.called
             .map((num) => (winner.hasMatch(num) ? cyan(num) : num))

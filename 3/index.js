@@ -30,7 +30,7 @@ const { input } = require("./input");
     gamma = parseInt(gamma, 2);
     epsilon = parseInt(epsilon, 2);
 
-    console.log(gamma * epsilon);
+    console.log("Part 1:", gamma * epsilon);
 })();
 
 (() => {
@@ -94,5 +94,5 @@ const { input } = require("./input");
 
     const co2_rating = parseInt(co2[0], 2);
 
-    console.log(oxy_rating * co2_rating);
+    console.log("Part 2:", oxy_rating * co2_rating);
 })();
