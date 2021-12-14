@@ -23,9 +23,9 @@ class Scorecard {
 
         // Create an empty grid to score picked numbers
         // Top to bottom
-        this.match_rows = Array(this.grid.length).fill(0);
+        this.matchRows = Array(this.grid.length).fill(0);
         // Left to right
-        this.match_cols = Array(this.grid.length).fill(0);
+        this.matchCols = Array(this.grid.length).fill(0);
     }
 
     hasMatch(number) {
@@ -38,16 +38,16 @@ class Scorecard {
         }
 
         const [row, col] = this.cells[number];
-        this.match_rows[row] += 1;
-        this.match_cols[col] += 1;
+        this.matchRows[row] += 1;
+        this.matchCols[col] += 1;
 
-        return this.match_rows[row] === 5 || this.match_cols[col] === 5;
+        return this.matchRows[row] === 5 || this.matchCols[col] === 5;
     }
 
     bingo() {
         return (
-            this.match_rows.some((row) => row === 5) ||
-            this.match_cols.some((col) => col === 5)
+            this.matchRows.some((row) => row === 5) ||
+            this.matchCols.some((col) => col === 5)
         );
     }
 
